@@ -1,0 +1,35 @@
+{{ output }}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <title>Agricultural Crop Recommendation System using IoT and Machine Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style type="text/css">
+  	p{
+  		text-align:justify;
+  	}
+  </style>
+</head>
+<body style="background: url(https://thelens.news/wp-content/uploads/2019/03/32.jpg);background-size: cover;">
+  <div  style="background:linear-gradient(0deg,#83ABD0,white )">
+  <br><br><h2 align="center">Agricultural Crop Recommendation System using IoT and Machine Learning</h2><br><br>
+  </div>
+<div class="container" ><hr>
+  <center>
+      <h4 align="center"><b><u>Prediction</u></b></h4>
+      {% if output==1 %}
+    <h2>Predicted Crop: Toor Dal</h2>
+   <hr><img src="https://5.imimg.com/data5/AX/MK/GLADMIN-11656764/toor-dal-1-kg-500x500.png" width="200">
+        {% endif %}
+      {% if output==2 %}
+        Predicted Crop: Sugar Cane
+        {% endif %}
+      {% if output==3 %}
+        Predicted Crop: Soya
+        {% endif %}
+  </center>
+</div>
+</body>
+</html>

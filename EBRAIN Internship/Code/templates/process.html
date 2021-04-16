@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CCFS | eBrain</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body style="background: url(https://selfgrowth.info/photos/highest-rated-blue-pictures/free-blue-textures-without-words9885.jpg);background-size: cover;background-repeat: no-repeat;">
+
+<div class="container-fluid" style="padding:0%">	<nav class="navbar navbar-expand-lg navbar-light " style="background: white">
+  <div class="col-10">
+  	<a class="" href="bootcamphome.php"><center><img class="img-fluid" src="https://cdn3.f-cdn.com/contestentries/1220833/27857740/5a4d12bc1ad3e_thumb900.jpg" style="height:120px"></center></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: black;font-size: 20px">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<div class="container-fluid" style="border:4px solid lightblue;background:white">
+<div id="step2">
+  <hr>
+    <h5><b>Transaction No:{{transno}}</b></h5><hr>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><b>Time:</b></td><td>{{dataextract[0]}}</td>
+          <td><b>V1:</b></td><td>{{dataextract[1]}}</td>
+          <td><b>V2:</b></td><td>{{dataextract[2]}}</td>
+          <td><b>V3:</b></td><td>{{dataextract[3]}}</td>
+          <td><b>V4:</b></td><td>{{dataextract[4]}}</td>
+        </tr>
+        <tr>
+          <td><b>V5:</b></td><td>{{dataextract[5]}}</td>
+          <td><b>V6:</b></td><td>{{dataextract[6]}}</td>
+          <td><b>V7:</b></td><td>{{dataextract[7]}}</td>
+          <td><b>V8:</b></td><td>{{dataextract[8]}}</td>
+          <td><b>V9:</b></td><td>{{dataextract[9]}}</td>
+        </tr>
+        <tr>
+          <td><b>V10:</b></td><td>{{dataextract[10]}}</td>
+          <td><b>V11:</b></td><td>{{dataextract[11]}}</td>
+          <td><b>V12:</b></td><td>{{dataextract[12]}}</td>
+          <td><b>V13:</b></td><td>{{dataextract[13]}}</td>
+          <td><b>V14:</b></td><td>{{dataextract[14]}}</td>
+        </tr>
+        <tr>
+          <td><b>V15:</b></td><td>{{dataextract[15]}}</td>
+          <td><b>V16:</b></td><td>{{dataextract[16]}}</td>
+          <td><b>V17:</b></td><td>{{dataextract[17]}}</td>
+          <td><b>V18:</b></td><td>{{dataextract[18]}}</td>
+          <td><b>V19:</b></td><td>{{dataextract[19]}}</td>
+        </tr>
+        <tr>
+          <td><b>V20:</b></td><td>{{dataextract[20]}}</td>
+          <td><b>V21:</b></td><td>{{dataextract[21]}}</td>
+          <td><b>V22:</b></td><td>{{dataextract[22]}}</td>
+          <td><b>V23:</b></td><td>{{dataextract[23]}}</td>
+          <td><b>V24:</b></td><td>{{dataextract[24]}}</td>
+        </tr>
+        <tr>
+          <td><b>V25:</b></td><td>{{dataextract[25]}}</td>
+          <td><b>V26:</b></td><td>{{dataextract[26]}}</td>
+          <td><b>V27:</b></td><td>{{dataextract[27]}}</td>
+          <td><b>V28:</b></td><td>{{dataextract[28]}}</td>
+          <td><b>Amount:</b></td><td>{{dataextract[29]}}</td>
+        </tr>
+        <tr>
+          <td colspan="5"><b>Actual Prediction:{% if actual==1 %}
+            Fradulent
+          {% endif %}
+          {% if actual==0 %}
+            Genuine
+          {% endif %}</b></td>
+        </tr>
+      </tbody>
+    </table><hr>
+    <div class="form-row" id="btnhid"><div class="col-4"></div>
+      <div class="form-group col-4">
+        <center><button class="btn btn-primary" style="width:100%;height:100px;" onclick="showpred()"><i style="padding:5px" class="fas fa-3x fa-user-check" ><br></i><h4>CHECK</h4></button></center>
+      </div>
+    <div class="col-4"></div>
+    </div>
+  </div>
+  <div id="step3" style="display: none;">
+    Machine Prediction:{% if pred==1 %}
+       <div class="form-row"><div class="col-3"></div>
+      <div class="form-group col-6">
+        <center><button class="btn btn-danger" disabled="" style="width:100%;height:150px"><i class="fas fa-5x fa-frown"></i><br>FRAUDLENT</button></center>
+      </div><div class="col-3"></div>
+    </div>
+  {% endif %}
+  {% if pred==0 %}
+       <div class="form-row"><div class="col-3"></div>
+      <div class="form-group col-6">
+        <center><button class="btn btn-primary" style="width:100%;height:150px"><i class="fas fa-5x fa-smile"></i><br>GENUINE</button></center>
+      </div><div class="col-3"></div>
+    </div>
+  {% endif %}
+  <h5 align="center"><a href="/">Click here to go back.</a></h5>
+  </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  function showpred()
+  {
+    document.getElementById('step3').style.display='block';
+    document.getElementById('btnhid').style.display='none';
+  }
+</script>
+</html>
